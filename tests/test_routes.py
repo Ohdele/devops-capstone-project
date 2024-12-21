@@ -74,11 +74,20 @@ class TestAccountService(TestCase):
         db.session.remove()
 
     def test_cors_security(self):
+<<<<<<< HEAD
         """It should return a CORS header"""
         response = self.client.get('/', environ_overrides=HTTPS_ENVIRON)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         # Check for the CORS header
         self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
+=======
+    """It should return a CORS header"""
+    response = self.client.get('/', environ_overrides=HTTPS_ENVIRON)
+    self.assertEqual(response.status_code, status.HTTP_200_OK)
+    # Check for the CORS header
+    self.assertEqual(response.headers.get('Access-Control-Allow-Origin'), '*')
+>>>>>>> 8d54a5653ab0a5e7b8db417ff970528df2f6f110
+
 
     ######################################################################
     #  H E L P E R   M E T H O D S
